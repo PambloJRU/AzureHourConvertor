@@ -46,3 +46,12 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'api-clima-drop'
     publishLocation: 'Container'
+
+#6
+- task: AzureWebApp@1
+  displayName: 'Desplegar API en Azure App Service'
+  inputs:
+    appType: 'webAppLinux'
+    appName: 'api-hour-converter'                    # El nombre exacto de tu App Service
+    package: '$(Build.ArtifactStagingDirectory)/**/*.zip'
+    publishProfile: '$(PerfilPublicacion)'
