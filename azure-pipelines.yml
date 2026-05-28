@@ -51,14 +51,14 @@ steps:
 - task: Bash@3
   displayName: 'Desplegar API vía ZipDeploy API'
   env:
-    # Pasamos la contraseña secreta al script de forma segura
     PASSWORD_SECRETA: $(DeployPassword)
+    USUARIO_SECRETO: $(DeployUser)      # usuario por el entorno seguro
   inputs:
     targetType: 'inline'
     script: |
-      # 1. Buscamos el nombre exacto del archivo .zip que se generó
       ZIP_FILE=$(find $(Build.ArtifactStagingDirectory) -name "*.zip" | head -n 1)
       echo "Desplegando archivo: $ZIP_FILE"
       
-      # 2. Enviamos el archivo directamente al servidor de Azure
-      curl -f -v -X POST -u "$(DeployUser):$PASSWORD_SECRETA" --data-binary @"$ZIP_FILE" https://api-hour-converter-etcpg7cwgmb7fhab.scm.eastus-01.azurewebsites.net/api/zipdeploy
+      # Usamos las variables seguras que no serán alteradas por Bash
+      curl -f -v -X POST -u "$USUARIO_SECRETO:$PASSWORD_SECRETA" --data-binary @"$ZIP_FILE" https://api-hour-converter-etcpg7cwgmb7fhab.scm.eastus-01.azurewebsites.net/api/zipdeploy
+      
