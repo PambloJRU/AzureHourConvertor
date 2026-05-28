@@ -8,21 +8,21 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
-# 1. Instalar el SDK de .NET 10 en el agente de Azure
+#  Instalar el SDK de .NET 10 en el agente de Azure
 - task: UseDotNet@2
   displayName: 'Instalar .NET 10 SDK'
   inputs:
     packageType: 'sdk'
     version: '10.x'
 
-# 2. Restaurar los paquetes NuGet (dependencias)
+#  Restaurar los paquetes NuGet (dependencias)
 - task: DotNetCoreCLI@2
   displayName: 'Restaurar dependencias (dotnet restore)'
   inputs:
     command: 'restore'
     projects: '**/*.csproj'
 
-# 3. Compilar el proyecto (El famoso "Build")
+# Compilar el proyecto 
 - task: DotNetCoreCLI@2
   displayName: 'Compilar proyecto (dotnet build)'
   inputs:
@@ -30,7 +30,7 @@ steps:
     projects: '**/*.csproj'
     arguments: '--configuration $(buildConfiguration)'
 
-# 4. Publicar y empaquetar la API lista para producción
+# Publicar y empaquetar la API lista para producción
 - task: DotNetCoreCLI@2
   displayName: 'Publicar aplicación (dotnet publish)'
   inputs:
@@ -39,7 +39,7 @@ steps:
     arguments: '--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)'
     zipAfterPublish: true
 
-# 5. Guardar el archivo empaquetado como el "Artefacto" final
+# Guardar el archivo empaquetado como el "Artefacto" final
 - task: PublishBuildArtifacts@1
   displayName: 'Subir Artefacto a Azure Pipelines'
   inputs:
@@ -47,12 +47,12 @@ steps:
     ArtifactName: 'api-clima-drop'
     publishLocation: 'Container'
 
-#6
+#6 a como entendi esto es ya es para desplegar, que busque el .zip , el compilado
 - task: Bash@3
   displayName: 'Desplegar API vía ZipDeploy API'
   env:
     PASSWORD_SECRETA: $(DeployPassword)
-    USUARIO_SECRETO: $(DeployUser)      # usuario por el entorno seguro
+    USUARIO_SECRETO: $(DeployUser)      
   inputs:
     targetType: 'inline'
     script: |
