@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertidor de Zona Horaria</title>
+    <style>
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            display: flex; justify-content: center; align-items: center; 
+            height: 100vh; background-color: #f0f4f8; margin: 0; 
+        }
+        .container { 
+            background: white; padding: 2.5rem; border-radius: 10px; 
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); 
+            max-width: 450px; width: 100%; text-align: center;
+        }
+        h2 { margin-top: 0; color: #1e293b; }
+        .base-zone { 
+            background: #e2e8f0; padding: 10px; border-radius: 6px; 
+            margin-bottom: 20px; font-weight: 500; color: #334155;
+        }
+        select { 
+            width: 100%; padding: 10px; border-radius: 6px; 
+            border: 1px solid #cbd5e1; margin-bottom: 20px; 
+            font-size: 1rem; cursor: pointer;
+        }
+        button { 
+            width: 100%; background-color: #0ea5e9; color: white; 
+            border: none; padding: 12px; font-size: 1rem; 
+            border-radius: 6px; cursor: pointer; font-weight: bold;
+            transition: background 0.3s; 
+        }
+        button:hover { background-color: #0284c7; }
+        .result { 
+            margin-top: 20px; padding: 15px; border-radius: 6px; 
+            background: #f8fafc; border: 1px solid #e2e8f0; 
+            display: none; text-align: left; color: #334155;
+        }
+        .highlight { 
+            font-size: 1.1rem; font-weight: bold; color: #0ea5e9; 
+            margin-top: 15px; display: block; text-align: center; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Diferencia Horaria</h2>
+        
+        <div class="base-zone">
+             Base: América Central (CST)
+        </div>
+        
+        <label for="zoneSelect" style="display:block; text-align:left; margin-bottom:5px; font-weight:bold; color:#475569;">
+            Selecciona el destino:
+        </label>
+        <select id="zoneSelect">
+            <option value="Europe/Madrid">Madrid, España</option>
+            <option value="America/New_York">Nueva York, EE. UU.</option>
+            <option value="America/Los_Angeles">Los Ángeles, EE. UU.</option>
+            <option value="Asia/Tokyo">Tokio, Japón</option>
+            <option value="Europe/London">Londres, Reino Unido</option>
+            <option value="America/Argentina/Buenos_Aires">Buenos Aires, Argentina</option>
+            <option value="Australia/Sydney">Sídney, Australia</option>
+        </select>
+        
+        <button onclick="compararHoras()">Calcular Diferencia</button>
+        
+        <div class="result" id="resultado"></div>
+    </div>
+
+    <script>
+        // ⚠️ IMPORTANTE: Recuerda revisar el puerto de tu .NET
+        const API_URL = 'http://localhost:5138/api/HourConverter/time-difference';
+
+        async function compararHoras() {
+            const select = document.getElementById('zoneSelect');
+            const targetZone = select.value;
+            const resultadoDiv = document.getElementById('resultado');
+            
+            resultadoDiv.style.display = 'block';
+            resultadoDiv.innerHTML = '<div style="text-align:center;">Consultando...</div>';
+
+            try {
+                // Pasamos la zona objetivo como Query Parameter a nuestra API
+                const response = await fetch(`${API_URL}?targetZone=${encodeURIComponent(targetZone)}`);
+                
+                if (!response.ok) {
+                    throw new Error('Error al procesar la solicitud en el servidor');
+                }
+
+                const data = await response.json();
+                
+                // Pintamos los datos procesados por .NET
+                resultadoDiv.innerHTML = `
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                        <span>Hora Local:</span>
+                        <strong>${data.baseTime}</strong>
+                    </div>
+                    <div style="display: flex; justify-content: space-between;">
+                        <span>Hora Destino:</span>
+                        <strong>${data.targetTime}</strong>
+                    </div>
+                    <span class="highlight">${data.message}</span>
+                `;
+            } catch (error) {
+                resultadoDiv.innerHTML = `<div style="color: red; text-align:center;">Error de conexión. ¿Está la API de .NET corriendo en el puerto correcto?</div>`;
+                console.error(error);
+            }
+        }
+    </script>
+</body>
+</html>
