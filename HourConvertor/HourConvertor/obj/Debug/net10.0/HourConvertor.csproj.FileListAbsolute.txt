@@ -32,3 +32,6 @@ C:\Users\Usuario\Desktop\TestAZURE\HourConvertor\HourConvertor\obj\Debug\net10.0
 C:\Users\Usuario\Desktop\TestAZURE\HourConvertor\HourConvertor\obj\Debug\net10.0\HourConvertor.pdb
 C:\Users\Usuario\Desktop\TestAZURE\HourConvertor\HourConvertor\obj\Debug\net10.0\HourConvertor.genruntimeconfig.cache
 C:\Users\Usuario\Desktop\TestAZURE\HourConvertor\HourConvertor\obj\Debug\net10.0\ref\HourConvertor.dll
+C:\Users\Usuario\Desktop\TestAZURE\HourConvertor\HourConvertor\bin\Debug\net10.0\HourConvertor.staticwebassets.runtime.json
+C:\Users\Usuario\Desktop\TestAZURE\HourConvertor\HourConvertor\obj\Debug\net10.0\HourConvertor.sourcelink.json
+C:\Users\Usuario\Desktop\TestAZURE\HourConvertor\HourConvertor\obj\Debug\net10.0\compressed\mu532b888g-{0}-558hbjh7uz-558hbjh7uz.gz

@@ -34,5 +34,6 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-
+app.UseDefaultFiles(); // Esto hace que busque automáticamente un "index.html"
+app.UseStaticFiles();  // Esto permite que el servidor web entregue el archivo
 app.Run();

@@ -3,16 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\Usuario\\Desktop\\TestAZURE\\HourConvertor\\HourConvertor\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A9FE53CA-B86A-4211-998B-61CAD8C30F35}|HourConvertor.csproj|c:\\users\\usuario\\desktop\\testazure\\hourconvertor\\hourconvertor\\controllers\\hourconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A9FE53CA-B86A-4211-998B-61CAD8C30F35}|HourConvertor.csproj|solutionrelative:controllers\\hourconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A9FE53CA-B86A-4211-998B-61CAD8C30F35}|HourConvertor.csproj|c:\\users\\usuario\\desktop\\testazure\\hourconvertor\\hourconvertor\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A9FE53CA-B86A-4211-998B-61CAD8C30F35}|HourConvertor.csproj|solutionrelative:weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A9FE53CA-B86A-4211-998B-61CAD8C30F35}|HourConvertor.csproj|c:\\users\\usuario\\desktop\\testazure\\hourconvertor\\hourconvertor\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A9FE53CA-B86A-4211-998B-61CAD8C30F35}|HourConvertor.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9A80B059-B68F-B868-3B99-463FB26011CC}|HourConvertor.csproj|c:\\users\\usuario\\desktop\\testazure\\hourconvertor\\hourconvertor\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A80B059-B68F-B868-3B99-463FB26011CC}|HourConvertor.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +14,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,41 +22,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\TestAZURE\\HourConvertor\\HourConvertor\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\Usuario\\Desktop\\TestAZURE\\HourConvertor\\HourConvertor\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAACUAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-28T00:57:32.899Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "HourConverter.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\TestAZURE\\HourConvertor\\HourConvertor\\Controllers\\HourConverter.cs",
-              "RelativeDocumentMoniker": "Controllers\\HourConverter.cs",
-              "ToolTip": "C:\\Users\\Usuario\\Desktop\\TestAZURE\\HourConvertor\\HourConvertor\\Controllers\\HourConverter.cs",
-              "RelativeToolTip": "Controllers\\HourConverter.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAA5wEkAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-28T00:53:04.029Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "WeatherForecast.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\TestAZURE\\HourConvertor\\HourConvertor\\WeatherForecast.cs",
-              "RelativeDocumentMoniker": "WeatherForecast.cs",
-              "ToolTip": "C:\\Users\\Usuario\\Desktop\\TestAZURE\\HourConvertor\\HourConvertor\\WeatherForecast.cs",
-              "RelativeToolTip": "WeatherForecast.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-28T00:50:08.139Z",
+              "WhenOpened": "2026-05-28T03:57:07.847Z",
               "EditorCaption": ""
             }
           ]
