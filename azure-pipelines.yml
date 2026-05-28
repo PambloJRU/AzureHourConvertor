@@ -1,5 +1,5 @@
 trigger:
-- main  # Cambiar a 'master' si tu rama principal se llama así
+- main  
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -59,6 +59,6 @@ steps:
       ZIP_FILE=$(find $(Build.ArtifactStagingDirectory) -name "*.zip" | head -n 1)
       echo "Desplegando archivo: $ZIP_FILE"
       
-      # Usamos las variables seguras que no serán alteradas por Bash
+      # variables secretas
       curl -f -v -X POST -u "$USUARIO_SECRETO:$PASSWORD_SECRETA" --data-binary @"$ZIP_FILE" https://api-hour-converter-etcpg7cwgmb7fhab.scm.eastus-01.azurewebsites.net/api/zipdeploy
       
