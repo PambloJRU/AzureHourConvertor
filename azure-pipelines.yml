@@ -61,4 +61,4 @@ steps:
       echo "Desplegando archivo: $ZIP_FILE"
       
       # 2. Enviamos el archivo directamente al servidor de Azure
-      curl -X POST -u "$(DeployUser):$PASSWORD_SECRETA" --data-binary @"$ZIP_FILE" api-hour-converter-etcpg7cwgmb7fhab.eastus-01.azurewebsites.net
+      curl -X POST -u "$(DeployUser):$PASSWORD_SECRETA" --data-binary @"$ZIP_FILE" https://api-hour-converter-etcpg7cwgmb7fhab.scm.eastus-01.azurewebsites.net/api/zipdeploy
