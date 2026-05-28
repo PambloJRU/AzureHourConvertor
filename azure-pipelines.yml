@@ -48,10 +48,17 @@ steps:
     publishLocation: 'Container'
 
 #6
-- task: AzureWebApp@1
-  displayName: 'Desplegar API en Azure App Service'
+- task: Bash@3
+  displayName: 'Desplegar API vía ZipDeploy API'
+  env:
+    # Pasamos la contraseña secreta al script de forma segura
+    PASSWORD_SECRETA: $(DeployPassword)
   inputs:
-    appType: 'webAppLinux'
-    appName: 'api-hour-converter'                    # El nombre exacto de tu App Service
-    package: '$(Build.ArtifactStagingDirectory)/**/*.zip'
-    publishProfile: '$(PerfilPublicacion)'
+    targetType: 'inline'
+    script: |
+      # 1. Buscamos el nombre exacto del archivo .zip que se generó
+      ZIP_FILE=$(find $(Build.ArtifactStagingDirectory) -name "*.zip" | head -n 1)
+      echo "Desplegando archivo: $ZIP_FILE"
+      
+      # 2. Enviamos el archivo directamente al servidor de Azure
+      curl -X POST -u "$(DeployUser):$PASSWORD_SECRETA" --data-binary @"$ZIP_FILE" https://api-hour-converter.scm.azurewebsites.net/api/zipdeploy
