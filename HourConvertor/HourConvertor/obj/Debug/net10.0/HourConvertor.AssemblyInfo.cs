@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HourConvertor")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5ad2beef3bc27b9b7bd71109cb4f104cd3f5ba7b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6c63cbf7684018aed1946aa5429b8b7ac1a7446f")]
 [assembly: System.Reflection.AssemblyProductAttribute("HourConvertor")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HourConvertor")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
